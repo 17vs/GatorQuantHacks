@@ -63,8 +63,8 @@ Fallback: `openFPGALoader -b tangnano20k bitstream/<project>.fs`
 ## Results
 | Metric | Ours | Reference |
 |---|---|---|
-| Total LUTs (Gowin Resource Usage Summary) | 305 | 542 |
-| Average latency (robust test) | 16.754 ms | 16.626 ms |
+| Total LUTs (Gowin Resource Usage Summary) | 298 | 542 |
+| Average latency (robust test) | 16.638 ms | 16.626 ms |
 | Packet correctness | 84/84 | |
 | Action correctness | 168/168 | |
 
