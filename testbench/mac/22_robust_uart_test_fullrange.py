@@ -22,7 +22,7 @@ import serial
 # SETTINGS  (change PORT only)
 # ============================================================
 
-PORT = "COM9"          # your board's COM port (see Windows Device Manager)
+PORT = "/dev/cu.usbserial-20250303171"          # your board's COM port (see Windows Device Manager)
 BAUD = 115200
 
 PACKET_COUNT = 100     # official run length: indices 0-99
