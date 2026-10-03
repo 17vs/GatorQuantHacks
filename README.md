@@ -14,3 +14,4 @@ https://github.com/ShayanNazir/GQH-Hardware-Track-Submission
 • Relevant performance results, including your LUT count
 • External libraries, IP cores, starter code, datasets, or other pre-existing resources used
 • Known limitations and/or incomplete features
+• Implementation of improvements
