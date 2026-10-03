@@ -13,4 +13,4 @@ https://github.com/ShayanNazir/GQH-Hardware-Track-Submission
 • Testing/verification procedure
 • Relevant performance results, including your LUT count
 • External libraries, IP cores, starter code, datasets, or other pre-existing resources used
-• Known limitations or incomplete features
+• Known limitations and/or incomplete features
