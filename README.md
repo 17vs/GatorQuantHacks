@@ -72,9 +72,15 @@ python -m pip install pyserial
 Program the board and close Gowin Programmer. Change only `PORT` in each test script to match your board's serial port. Our Windows test setup port used COM9 and Mac test port setup used /dev/cu.usbserial-20250303171.
 
 From the repository root, run:
+Windows:
 ```bash
-python testbench/21_quick_uart_test.py
-python testbench/22_robust_uart_test.py
+python testbench/windows/21_quick_uart_test.py
+python testbench/windows/22_robust_uart_test.py
+```
+Mac:
+```bash
+python3 testbench/mac/21_quick_uart_test.py
+python3 testbench/mac/22_robust_uart_test.py
 ```
 
 Use `python3` instead of `python` if required by your installation. Keep the board powered between runs; index 0 resets the session automatically.
@@ -106,6 +112,9 @@ Official judging uses the organizer's judging computer.
 - **TX inter-byte gap:** The transmitter adds 100 µs of idle time after each byte (`TX_GAP_CYCLES = 2700` at 27 MHz) to help prevent dropped or corrupted bytes in the BL616 USB bridge. This setting passed all ten saved robust test runs.
 - **Warm-up and reset strategy:** Indices 0–15 fill independent 16-price shift-register windows for A and B and return NONE. Index 0 clears both windows, rolling sums, previous prices, and held actions before processing the new session's prices. Each update shifts in the current price and removes the oldest. From index 16 onward, crossings use floor-divided old and new averages. Routing follows item IDs regardless of packet slot.
 - **LUT optimizations and measured savings:** A shared arithmetic datapath processes the two slots sequentially. Shift-register windows avoid variable-address read multiplexers and buffer pointers. Actions use two bits, the UART transmitter shares its bit/gap timer, and packet reception uses a shift register. Synthesis LUT usage decreased from 604 to 298, saving 306 LUTs (50.7%).
+
+## External resources used
+Used the organizer-provided physical constraint file and Python UART test scripts. AI assistance: Claude supported project planning, and ChatGPT helped draft and refine the VHDL code. Our team built, programmed, and tested the FPGA design on the provided hardware.
 
 ## Known limitations
 No failures were observed in the saved on-board tests. HDL simulation was not performed, and the official unpublished price seed has not been tested.
