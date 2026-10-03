@@ -1,10 +1,10 @@
-# <Team / Project Name>: GQH Hardware Track
+# Team VincentVanGPT: GQH Hardware Track
 
 ## Team
-- <Vincent Schifano>
-- <Daniel Cao>
-- <Himmet Dhaliwal>
-- <Avi Patel>
+- Vincent Schifano
+- Daniel Cao
+- Himmet Dhaliwal
+- Avi Patel
 
 ## Description
 A hardware moving-average crossing detector. The FPGA receives 8-byte UART
