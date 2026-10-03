@@ -92,12 +92,12 @@ The robust script writes its CSV and summary in the current working directory. C
 | --- | --- | --- |
 | Total LUTs (synthesis report) | 298 | 542 |
 | Average round-trip latency (single robust run) | 16.638 ms | 16.626 ms |
-| Average round-trip latency (10 robust runs) | 16.743 ms | — |
+| Average round-trip latency (10 consecutive robust runs) | 16.743 ms | — |
 | Scored packet correctness (single run) | 84/84 | — |
 | Scored action correctness (single run) | 168/168 | — |
 | Scored packet correctness (10 runs) | 840/840 | — |
 | Scored action correctness (10 runs) | 1,680/1,680 | — |
-| Timeouts across 10 runs | 0 | — |
+| Timeouts across runs | 0 | — |
 
 Latency measurements are from our local test computer.
 Official judging uses the organizer's judging computer.
