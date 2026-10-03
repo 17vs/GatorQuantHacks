@@ -69,9 +69,11 @@ Fallback: `openFPGALoader -b tangnano20k bitstream/<project>.fs`
 | Action correctness | 168/168 | |
 
 ## Design notes
-- <TX inter-byte gap and how it was chosen>
-- <Warm-up handling, window/reset strategy>
-- <Any LUT optimizations and measured savings>
+TX inter-byte gap: The transmitter adds 1 ms of idle time between response bytes to address the guide’s warning about dropped or corrupted bytes in the BL616 USB bridge. This setting was retained after the UART tests passed without timeouts. The optimized design’s measured average round-trip latency was 16.630 ms.
+
+Warm-up and reset strategy: Indices 0–15 fill each item’s independent 16-price window and return NONE. Index 0 clears both items’ sums, previous prices, held actions, buffer pointers, and all 32 price-memory entries. Each first sample explicitly initializes its item’s sum. From index 16 onward, circular buffers replace the oldest price, and rolling sums calculate floor-divided averages for crossing detection. Routing follows item IDs, so packet slots may swap.
+
+LUT optimizations and measured savings: Replaced the resettable price-window arrays with a shared 32 × 16-bit synchronous block RAM, cleared one entry per clock through its write port. Internal actions use two bits, and buffer pointers use four-bit wrapping counters. Total LUT usage fell from 604 to 305, saving 299 LUTs (49.5%). The optimized design passed the robust test with 84/84 correct packets, 168/168 correct actions, and zero timeouts.
 
 ## External resources used
 Used the organizer-supplied .cst and test scripts. AI assistance: Claude was used for project planning, ChatGPT was used for creation of VHDL file, All final HDL was reviewed, simulated, and tested on hardware by the team.
