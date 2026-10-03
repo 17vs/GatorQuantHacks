@@ -1,4 +1,4 @@
-# Team VincentVanGPT: GQH Hardware Track
+# Team ClockCycleGang: GQH Hardware Track
 
 ## Team
 - Vincent Schifano
@@ -23,8 +23,8 @@ reset on index 0, and response generation. No host software runs during judging.
 | Board | Tang Nano 20K |
 | FPGA part | GW2AR-LV18QN88C8/I7 |
 | HDL | VHDL |
-| Gowin EDA version | <e.g. V1.9.11.03 Education> |
-| Top-level module | `top` (<update if different>) |
+| Gowin EDA version | V1.9.11.03 Education |
+| Top-level module | `top` () |
 
 ## Repository layout
 ```
@@ -63,10 +63,10 @@ Fallback: `openFPGALoader -b tangnano20k bitstream/<project>.fs`
 ## Results
 | Metric | Ours | Reference |
 |---|---|---|
-| Total LUTs (Gowin Resource Usage Summary) | <fill in> | 542 |
-| Average latency (robust test) | <fill in> ms | 16.626 ms |
-| Packet correctness | <x>/84 | |
-| Action correctness | <x>/168 | |
+| Total LUTs (Gowin Resource Usage Summary) | 305 | 542 |
+| Average latency (robust test) | 16.754 ms | 16.626 ms |
+| Packet correctness | 84/84 | |
+| Action correctness | 168/168 | |
 
 ## Design notes
 - <TX inter-byte gap and how it was chosen>
@@ -74,8 +74,7 @@ Fallback: `openFPGALoader -b tangnano20k bitstream/<project>.fs`
 - <Any LUT optimizations and measured savings>
 
 ## External resources used
-<List any libraries, IP cores, starter code, or datasets. If none, write "None
-beyond the organizer-supplied .cst and test scripts.">
+Used the organizer-supplied .cst and test scripts. AI assistance: Claude was used for project planning, ChatGPT was used for creation of VHDL file, All final HDL was reviewed, simulated, and tested on hardware by the team.
 
 ## Known limitations
-<Be honest. If none known, say so.>
+None known
