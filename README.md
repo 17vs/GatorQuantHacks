@@ -85,7 +85,7 @@ Warm-up and reset strategy: Indices 0–15 fill each item’s independent 16-pri
 LUT optimizations and measured savings: Replaced the resettable price-window arrays with a shared 32 × 16-bit synchronous block RAM, cleared one entry per clock through its write port. Internal actions use two bits, and buffer pointers use four-bit wrapping counters. Total LUT usage fell from 604 to 305, saving 299 LUTs (49.5%). The optimized design passed the robust test with 84/84 correct packets, 168/168 correct actions, and zero timeouts.
 
 ## External resources used
-Used the organizer-supplied .cst and test scripts. AI assistance: Claude was used for project planning, ChatGPT was used for creation of VHDL file, All final HDL was reviewed, simulated, and tested on hardware by the team.
+Used the organizer-supplied .cst and test scripts. AI assistance: Claude supported project planning, ChatGPT helped draft and refine the VHDL code. Our team built, programmed, and tested the FPGA design on the provided hardware.
 
 ## Known limitations
 None known
