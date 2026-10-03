@@ -55,10 +55,19 @@ Fallback: `openFPGALoader -b tangnano20k bitstream/<project>.fs`
   `22_robust_uart_test.py` to your COM port, then run quick test, then robust test.
 
 ## Testing and verification
-- <Simulation: tool used, what the testbench checks, golden-model source>
-- <On-board: quick test result, robust test result>
-- <Soak test: N consecutive robust runs, number of timeouts>
-- CSVs are in `results/`.
+- **Simulation:** No HDL simulation was performed. On-board validation
+  used the organizer-provided Python tests and their moving-average
+  software reference models as the golden model.
+
+- **On-board:** Quick UART test: PASS. Robust UART test: 84/84 scored
+  packets correct, 168/168 actions correct, and zero timeouts.
+
+- **Soak test:** 10 robust runs, all achieving 100% correctness.
+  Across 1,000 received packets: zero timeouts, 840/840 scored packets
+  correct, and 1,680/1,680 scored actions correct.
+  Overall average round-trip latency: 16.743 ms.
+
+- CSVs and per-run summaries are in `results/`.
 
 ## Results
 | Metric | Ours | Reference |
