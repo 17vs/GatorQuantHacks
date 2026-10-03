@@ -76,11 +76,13 @@ Windows:
 ```bash
 python testbench/windows/21_quick_uart_test.py
 python testbench/windows/22_robust_uart_test.py
+python testbench/windows/22_robust_uart_test_fullrange.py
 ```
 Mac:
 ```bash
 python3 testbench/mac/21_quick_uart_test.py
 python3 testbench/mac/22_robust_uart_test.py
+python testbench/mac/22_robust_uart_test_fullrange.py
 ```
 
 Use `python3` instead of `python` if required by your installation. Keep the board powered between runs; index 0 resets the session automatically.
@@ -99,10 +101,13 @@ The robust script writes its CSV and summary in the current working directory. C
 | Total LUTs (synthesis report) | 298 | 542 |
 | Average round-trip latency (single robust run) | 16.638 ms | 16.626 ms |
 | Average round-trip latency (10 consecutive robust runs) | 16.743 ms | — |
+| Average round-trip latency (single robust full range run) | 16.720 ms | — |
 | Scored packet correctness (single run) | 84/84 | — |
 | Scored action correctness (single run) | 168/168 | — |
 | Scored packet correctness (10 runs) | 840/840 | — |
 | Scored action correctness (10 runs) | 1,680/1,680 | — |
+| Scored packet correctness (single fullrange run) | 84/84 | — |
+| Scored action correctness (single fullrange run) | 168/168 | — |
 | Timeouts across runs | 0 | — |
 
 Latency measurements are from our local test computer.
