@@ -38,14 +38,14 @@ results/      test CSVs, soak-test logs
 ```
 
 ## Build and program
-1. Open `gowin/<project>.gprj` in Gowin EDA.
+1. Open `gowin/run3.gprj` in Gowin EDA.
 2. Confirm Top Module/Entity is `top` (Project > Configuration > Synthesize > General).
 3. Run Synthesize, then Place & Route (both must finish without errors).
 4. Tools > Programmer > Scan Device > select GW2AR-18C.
-5. Access Mode: SRAM Mode. Operation: SRAM Program. File: `bitstream/<project>.fs`.
+5. Access Mode: SRAM Mode. Operation: SRAM Program. File: `bitstream/run3.fs`.
 6. Click Program/Configure.
 
-Fallback: `openFPGALoader -b tangnano20k bitstream/<project>.fs`
+Fallback: `openFPGALoader -b tangnano20k bitstream/run3.fs`
 
 ## Inputs, outputs, and how to reproduce
 - Request (8 bytes, big-endian): index(2) item1(1) price1(2) item2(1) price2(2)
